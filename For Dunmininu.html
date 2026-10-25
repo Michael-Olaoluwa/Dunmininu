@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Dunmininu 🤍</title>
+<style>
+:root{--bg1:#fff0f4;--bg2:#ffc9d8;--ink:#3a0f24;--soft:#7a4659;--rose:#e0245e;--card:rgba(255,255,255,.75);--mine:#e0245e;--mine-ink:#fff;--glow:rgba(224,36,94,.25);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1f0816;--bg2:#4a1230;--ink:#ffe6ee;--soft:#e4a9bd;--rose:#ff5c8a;--card:rgba(255,255,255,.09);--glow:rgba(255,92,138,.3)}}
+:root[data-theme="dark"]{--bg1:#1f0816;--bg2:#4a1230;--ink:#ffe6ee;--soft:#e4a9bd;--rose:#ff5c8a;--card:rgba(255,255,255,.09);--glow:rgba(255,92,138,.3)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--ink);font-family:-apple-system,"SF Pro Text",system-ui,sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.screen{position:absolute;inset:0;padding:max(env(safe-area-inset-top,0px),16px) 22px max(env(safe-area-inset-bottom,0px),18px);display:none;flex-direction:column}
+.screen.on{display:flex}
+h1,h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:500;margin:0;line-height:1.1}
+.center{justify-content:center;align-items:center;text-align:center;gap:18px}
+.cover h1{font-size:58px;font-style:italic;letter-spacing:-1px}
+.cover p{margin:0;color:var(--soft);font-size:17px;line-height:1.5;max-width:280px}
+.orb{width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9db8,var(--rose));display:grid;place-items:center;font-size:46px;box-shadow:0 0 0 12px var(--glow),0 0 60px var(--glow);animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.btn{border:0;background:var(--rose);color:#fff;font:600 17px/1 -apple-system,system-ui,sans-serif;padding:16px 30px;border-radius:99px;min-height:50px;box-shadow:0 8px 24px var(--glow);cursor:pointer}
+.btn.ghost{background:var(--card);color:var(--ink);box-shadow:none;border:1.5px solid var(--glow)}
+.btn:active{transform:scale(.96)}
+.bar{display:flex;align-items:center;gap:10px;padding:6px 2px 12px;border-bottom:1px solid var(--glow)}
+.av{width:38px;height:38px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-weight:700}
+.bar b{display:block;font-size:16px}.bar small{color:var(--soft);font-size:12.5px}
+#chat{flex:1;overflow-y:auto;padding:14px 0;display:flex;flex-direction:column;gap:9px;-webkit-overflow-scrolling:touch}
+.b{max-width:84%;padding:11px 15px;border-radius:20px 20px 20px 6px;background:var(--card);font-size:16.5px;line-height:1.45;animation:pop .35s ease-out}
+.b.me{align-self:flex-end;background:var(--mine);color:var(--mine-ink);border-radius:20px 20px 6px 20px}
+.b.big{font-family:"Iowan Old Style",Georgia,serif;font-style:italic;font-size:20px}
+.typing{display:flex;gap:5px;width:62px;padding:14px 16px}
+.typing i{width:8px;height:8px;border-radius:50%;background:var(--soft);animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-4px)}}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.96)}}
+.foot{padding-top:10px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.foot small{color:var(--soft)}
+.foot .btn{width:100%}
+h2{font-size:34px;margin:10px 0 6px}
+.lead{color:var(--soft);font-size:16px;line-height:1.5;margin:0 0 16px}
+.env{width:100%;text-align:left;border:1.5px solid var(--glow);background:var(--card);color:var(--ink);border-radius:20px;padding:16px 18px;margin-bottom:12px;font:inherit;cursor:pointer;display:block}
+.env span{font-weight:650;font-size:17px;display:block}
+.env p{margin:0;max-height:0;overflow:hidden;opacity:0;font-size:16px;line-height:1.5;transition:max-height .45s ease,opacity .35s ease,margin .3s}
+.env.open p{max-height:220px;opacity:1;margin-top:10px}
+.env.open{border-color:var(--rose)}
+.list{flex:1;overflow-y:auto}
+#ans{min-height:84px;font-family:"Iowan Old Style",Georgia,serif;font-style:italic;font-size:22px;line-height:1.35;margin:0}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.fin h2{font-size:40px;font-style:italic}
+.h{position:fixed;pointer-events:none;font-size:26px;z-index:9;animation:fly 1.3s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) scale(1.3);opacity:0}}
+@media (prefers-reduced-motion:reduce){.orb,.typing i{animation:none}.b,.h{animation-duration:.01s}}
+button:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<section class="screen center cover on" id="s0">
+  <div class="orb">🤍</div>
+  <h1>Dunmininu</h1>
+  <p>I made this just for you. It’s everything I can’t say over text right now.</p>
+  <button class="btn" data-go="1">Open</button>
+</section>
+
+<section class="screen" id="s1">
+  <div class="bar"><div class="av">M</div><div><b>Mike 💻</b><small>typing from the school wifi</small></div></div>
+  <div id="chat"></div>
+  <div class="foot"><button class="btn" id="nxt">Tap to read</button><small id="cnt"></small></div>
+</section>
+
+<section class="screen" id="s2">
+  <h2>Open when…</h2>
+  <p class="lead">Tap a note for the moment you need it.</p>
+  <div class="list">
+    <button class="env"><span>💌 you miss me</span><p>I miss you too, every day. I look at your face on my laptop and smile like a fool. Wait for me, I’m coming back to you.</p></button>
+    <button class="env"><span>🥺 you feel I forgot you</span><p>I haven’t, not for one minute. If I could text you all day, I would. The rules stopped my phone. They never stopped my heart.</p></button>
+    <button class="env"><span>😤 you’re annoyed with me</span><p>You’re allowed to be. Just know I’m studying, fighting for my grades and my defence, and doing it with you in my mind. I’ll make it up to you.</p></button>
+    <button class="env"><span>🌙 you can’t sleep</span><p>Close your eyes. Somewhere in Covenant, someone loves you more than anything. Goodnight, my love.</p></button>
+  </div>
+  <div class="foot"><button class="btn" data-go="3">One last thing</button></div>
+</section>
+
+<section class="screen center fin" id="s3">
+  <h2>Dunmininu,</h2>
+  <p id="ans">are you still annoyed with me? 🥺</p>
+  <div class="row" id="opts">
+    <button class="btn ghost" data-a="1">A little</button>
+    <button class="btn" data-a="2">No. I love you too</button>
+  </div>
+</section>
+
+<script>
+const $=s=>document.querySelector(s);
+const go=n=>{document.querySelectorAll('.screen').forEach((e,i)=>e.classList.toggle('on',i===n));};
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{go(+b.dataset.go);burst(b);});
+
+const msgs=[
+"Hi my love 🤍",
+"Before anything else: I love you. Please read to the end.",
+"From the day we met at IYC, I knew. I loved every single thing about you, and your story made me love you even more.",
+"I know I’ve been hard to reach, and I hate that.",
+"Covenant University doesn’t allow phones, SIMs or MiFi. All I have is my laptop and the school wifi.",
+"Between classes, my grades and my project defence, the moments I get to chat are rare.",
+"But it never means I stopped thinking about you. Not for a second.",
+"Your face is my laptop wallpaper. I see you first, every single day. 🥹",
+"Whenever I can chat with you, I will. Every single time. So please don’t be annoyed with me.",
+"You are what I love most in this world, and I will never stop loving you. 🤍"
+];
+let i=0,busy=false;const chat=$('#chat'),nxt=$('#nxt'),cnt=$('#cnt');
+function add(t,cls){const d=document.createElement('div');d.className='b '+(cls||'');d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d;}
+function step(){
+  if(busy)return;
+  if(i>=msgs.length){go(2);return;}
+  busy=true;nxt.disabled=true;
+  const t=document.createElement('div');t.className='b typing';t.innerHTML='<i></i><i></i><i></i>';chat.appendChild(t);chat.scrollTop=chat.scrollHeight;
+  setTimeout(()=>{
+    t.remove();
+    const last=i===msgs.length-1;
+    add(msgs[i],last?'me big':'');
+    i++;
+    cnt.textContent=i+' of '+msgs.length;
+    nxt.textContent=i>=msgs.length?'Continue':'Tap to read';
+    nxt.disabled=false;busy=false;
+    if(last)burst(nxt);
+  },i===0?500:900);
+}
+nxt.onclick=step;
+document.querySelector('[data-go="1"]').addEventListener('click',()=>setTimeout(step,300));
+
+document.querySelectorAll('.env').forEach(e=>e.onclick=ev=>{e.classList.toggle('open');if(e.classList.contains('open'))burst(e,4);});
+
+document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{
+  const a=$('#ans');
+  if(b.dataset.a==='1'){a.textContent='Then let me spend the rest of my life making it up to you. I love you, Dunmininu. 🤍';}
+  else{a.textContent='You’re my person, Dunmininu. Today, tomorrow and forever. 🤍';$('#opts').style.display='none';for(let k=0;k<6;k++)setTimeout(()=>burst(a,10),k*250);}
+  burst(b,14);
+});
+
+function burst(el,n){
+  const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+  const hs=['🤍','❤️','💗','💕'];
+  for(let k=0;k<(n||8);k++){
+    const h=document.createElement('span');h.className='h';h.textContent=hs[k%4];
+    h.style.left=cx+'px';h.style.top=cy+'px';
+    h.style.setProperty('--x',(Math.random()*240-120)+'px');
+    h.style.setProperty('--y',(-80-Math.random()*200)+'px');
+    document.body.appendChild(h);setTimeout(()=>h.remove(),1400);
+  }
+}
+</script>
+</body>
+</html>
